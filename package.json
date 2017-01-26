@@ -1,0 +1,22 @@
+{
+  "name": "blog-simple-next",
+  "description": "A simple blog to show use of Next.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 5117",
+    "build": "next build",
+    "start": "NODE_ENV=production next start",
+    "lint": "standard",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Victor Kane",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "next": "^1.2.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "standard": "^8.6.0"
+  }
+}
