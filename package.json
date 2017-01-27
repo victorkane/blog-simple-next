@@ -13,7 +13,8 @@
   "author": "Victor Kane",
   "license": "GPL-3.0",
   "dependencies": {
-    "next": "^2.0.0-beta.19"
+    "next": "^2.0.0-beta.19",
+    "path-match": "^1.2.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
