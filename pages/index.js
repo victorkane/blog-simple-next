@@ -4,7 +4,7 @@ import Router from 'next/router'
 export default class extends React.Component {
   static getInitialProps () {
     return {
-      posts: new Array(15).fill({title: 'This is a post'}).map((v, k) => v.title = v.title + ' ' + k)
+      posts: new Array(15).fill({title: 'This is a post '}).map((v, k) => v.title = v.title + ' ' + (k + 1))
     }
   }
 
