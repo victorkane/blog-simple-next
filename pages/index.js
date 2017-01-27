@@ -23,7 +23,7 @@ export default class extends React.Component {
         <div className="posts">
           { this.props.posts.map(post => (
               <div className="post" key={clave = clave + 1}>
-                <Link href='/post'><a>{post}</a></Link>
+                <Link href={'/post/' + clave}><a>{post}</a></Link>
               </div>
           ))}
         </div>
