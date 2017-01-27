@@ -3,9 +3,11 @@
   "description": "A simple blog to show use of Next.js",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 5117",
+    "_dev": "next -p 5117",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production next start",
+    "_start": "NODE_ENV=production next start",
+    "start": "NODE_ENV=production node server.js",
     "lint": "standard",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
