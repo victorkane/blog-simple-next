@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import Header from '../components/header'
 
@@ -21,7 +22,9 @@ export default class extends React.Component {
         <Header />
         <div className="posts">
           { this.props.posts.map(post => (
-              <div className="post" key={clave = clave + 1}><p>{post}</p></div>
+              <div className="post" key={clave = clave + 1}>
+                <Link href='/post'><a>{post}</a></Link>
+              </div>
           ))}
         </div>
       </div>
