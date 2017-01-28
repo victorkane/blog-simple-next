@@ -13,7 +13,7 @@ export default class Post extends React.Component {
       <div>
         <Header />
         <h2>Post</h2>
-        <div>{this.props.posts[this.props.url.query.id]}</div>
+        <div>{this.props.posts[this.props.url.query.id - 1]}</div>
       </div>
     )
   }
