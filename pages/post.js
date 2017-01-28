@@ -4,16 +4,27 @@ import Header from '../components/header'
 
 export default class Post extends React.Component {
   static getInitialProps () {
+    let posts = []
+    let n = 0
+    const length = 15
+    while(posts.length < length) {
+      posts.push({
+        "id": n++,
+        "title": "This is post " + n,
+        "body": "post body, post body, post body"
+      });
+    }
     return {
-      posts: new Array(15).fill({title: 'This is un post '}).map((v, k) => v.title = v.title + ' ' + (k + 1))
+      posts
     }
   }
   render() {
+    const post = this.props.posts[this.props.url.query.id - 1]
     return(
       <div>
         <Header />
-        <h2>Post</h2>
-        <div>{this.props.posts[this.props.url.query.id - 1]}</div>
+        <h2>{post['title']}</h2>
+        <p>{post['body']}</p>
       </div>
     )
   }

@@ -3,11 +3,19 @@ import Link from 'next/link'
 
 import Header from '../components/header'
 
-
 export default class extends React.Component {
   static getInitialProps () {
+    let posts = []
+    let n = 0
+    const length = 15
+    while(posts.length < length) {
+      posts.push({
+        "id": n++,
+        "title": "This is post " + n,
+      });
+    }
     return {
-      posts: new Array(15).fill({title: 'This is un post '}).map((v, k) => v.title = v.title + ' ' + (k + 1))
+      posts
     }
   }
 
@@ -21,11 +29,11 @@ export default class extends React.Component {
       <div>
         <Header />
         <div className="posts">
-          { this.props.posts.map(post => (
-              <div className="post" key={clave = clave + 1}>
-                <Link href={'/post/?id=' + clave} as={'/post/' + clave}><a>{post}</a></Link>
-              </div>
-          ))}
+        { this.props.posts.map(post => (
+          <div className="post" key={clave = clave + 1}>
+            <Link href={'/post/?id=' + clave} as={'/post/' + clave}><a>{post.title}</a></Link>
+          </div>
+        ))}
         </div>
       </div>
     )
