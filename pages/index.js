@@ -24,14 +24,13 @@ export default class extends React.Component {
   }
 
   render () {
-    let clave = 0;
     return(
       <div>
         <Header />
         <div className="posts">
         { this.props.posts.map(post => (
-          <div className="post" key={clave = clave + 1}>
-            <Link href={'/post/?id=' + clave} as={'/post/' + clave}><a>{post.title}</a></Link>
+          <div className="post" key={post.id + 1}>
+            <Link href={'/post/?id=' + (post.id + 1)} as={'/post/' + (post.id + 1)}><a>{post.title}</a></Link>
           </div>
         ))}
         </div>
