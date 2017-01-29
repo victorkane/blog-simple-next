@@ -1,22 +1,16 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from 'next/prefetch'
+import 'isomorphic-fetch'
 
 import Header from '../components/header'
 
 export default class extends React.Component {
-  static getInitialProps () {
-    let posts = []
-    let n = 0
-    const length = 15
-    while(posts.length < length) {
-      posts.push({
-        "id": n++,
-        "title": "This is post " + n,
-      });
-    }
-    return {
-      posts
-    }
+  static async getInitialProps () {
+    // eslint-disable-next-line no-undef
+    // const res = await fetch('http://reactpathways.org:5217/api/post')
+    const res = await fetch('http://reactpathways.org:5217/api/post')
+    const json = await res.json()
+    return { posts: json }
   }
 
   constructor (props) {
@@ -24,6 +18,7 @@ export default class extends React.Component {
   }
 
   render () {
+    console.log("posts", this.props.posts)
     return(
       <div>
         <Header />
