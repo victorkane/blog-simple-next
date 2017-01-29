@@ -1,4 +1,5 @@
 import React from 'react'
+// change next/link to next/prefetch
 import Link from 'next/prefetch'
 import 'isomorphic-fetch'
 
@@ -18,7 +19,6 @@ export default class extends React.Component {
   }
 
   render () {
-    console.log("posts", this.props.posts)
     return(
       <div>
         <Header />
