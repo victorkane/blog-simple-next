@@ -1,25 +1,18 @@
 import React from 'react'
+import 'isomorphic-fetch'
 
 import Header from '../components/header'
 
 export default class Post extends React.Component {
-  static getInitialProps () {
-    let posts = []
-    let n = 0
-    const length = 15
-    while(posts.length < length) {
-      posts.push({
-        "id": n++,
-        "title": "This is post " + n,
-        "body": "post body, post body, post body"
-      });
-    }
-    return {
-      posts
-    }
+  static async getInitialProps ({pathname, query}) {
+    // eslint-disable-next-line no-undef
+    //console.log(query.id)
+    const res = await fetch('http://reactpathways.org:5217/api/post/' + query.id)
+    const json = await res.json()
+    return { post: json }
   }
   render() {
-    const post = this.props.posts[this.props.url.query.id - 1]
+    const post = this.props.post
     return(
       <div>
         <Header />
