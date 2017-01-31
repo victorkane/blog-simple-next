@@ -5,10 +5,12 @@ import 'isomorphic-fetch'
 
 import Header from '../components/header'
 
+import { apiHost } from '../appconfig.js'
+
 export default class extends React.Component {
   static async getInitialProps () {
     // eslint-disable-next-line no-undef
-    const res = await fetch('http://reactpathways.org:5217/api/post')
+    const res = await fetch(apiHost + '/api/post')
     const json = await res.json()
     return { posts: json }
   }
